@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+
+  demo-spring-batch-with-h2:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: app
+    hostname: app
+    ports:
+      - "8080:8080"
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
